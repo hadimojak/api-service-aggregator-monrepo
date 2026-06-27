@@ -1,0 +1,62 @@
+{
+  "monorepo": true,
+  "projects": {
+    "auth-service": {
+      "type": "application",
+      "root": "apps/auth-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/auth-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/auth-service/tsconfig.app.json"
+      }
+    },
+    "cache": {
+      "type": "library",
+      "root": "libs/cache",
+      "entryFile": "index",
+      "sourceRoot": "libs/cache/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/cache/tsconfig.lib.json"
+      }
+    },
+    "database": {
+      "type": "library",
+      "root": "libs/database",
+      "entryFile": "index",
+      "sourceRoot": "libs/database/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
+      }
+    },
+    "provider-service": {
+      "type": "application",
+      "root": "apps/provider-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/provider-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/provider-service/tsconfig.app.json"
+      }
+    },
+    "rabbit": {
+      "type": "library",
+      "root": "libs/rabbit",
+      "entryFile": "index",
+      "sourceRoot": "libs/rabbit/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/rabbit/tsconfig.lib.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}
