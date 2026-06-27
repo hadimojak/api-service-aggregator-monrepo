@@ -8,10 +8,10 @@ import {
   OneToMany,
   JoinColumn,
 } from 'typeorm';
-import { UserEntity } from 'apps/user-service/src/entities/user.entity'; 
-import { NotificationEntity } from 'apps/notification-service/src/entities/notification.entity'; 
-import { RequestLogEntity } from '@app/log/entities/request-log.entity'; 
-import { ApiEntity } from 'apps/api-service/src/entities/api.entity'; 
+import { UserEntity } from './user.entity'; 
+import { NotificationEntity } from './notification.entity';
+import { RequestLogEntity } from './request-log.entity';
+import { ApiEntity } from './api.entity'; 
 
 @Entity('tenant')
 export class TenantEntity {

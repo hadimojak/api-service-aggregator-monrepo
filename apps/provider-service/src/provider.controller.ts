@@ -21,7 +21,7 @@ import {
   ApiParam,
   ApiTags,
 } from '@nestjs/swagger';
-import { ProviderEntity } from './entities/provider.entity';
+import { ProviderEntity } from '@app/log/entities/provider.entity'; 
 import { ModifyResultDto } from '@app/common/dto/result-modify.dto'; 
 import { ProviderFilterDto } from '@app/common/dto/provider-filtere.dto'; 
 

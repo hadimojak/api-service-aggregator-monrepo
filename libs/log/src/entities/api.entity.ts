@@ -7,8 +7,8 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { ProviderEntity } from 'apps/provider-service/src/entities/provider.entity'; 
-import { TenantEntity } from 'apps/tenant-service/src/entities/tenant.entity'; 
+import { ProviderEntity } from './provider.entity'; 
+import { TenantEntity } from './tenant.entity'; 
 
 @Entity('api')
 export class ApiEntity {

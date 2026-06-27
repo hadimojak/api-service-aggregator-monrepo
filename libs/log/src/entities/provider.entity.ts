@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
   OneToMany,
 } from 'typeorm';
-import { ApiEntity } from 'apps/api-service/src/entities/api.entity';
+import { ApiEntity } from './api.entity';
 
 @Entity('provider')
 export class ProviderEntity {

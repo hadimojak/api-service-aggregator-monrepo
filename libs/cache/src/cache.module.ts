@@ -3,6 +3,7 @@ import { CacheService } from './cache.service';
 import { RedisModule } from './redis/redis.module';
 
 @Module({
+  imports: [RedisModule],
   providers: [CacheService],
   exports: [CacheService, RedisModule],
 })

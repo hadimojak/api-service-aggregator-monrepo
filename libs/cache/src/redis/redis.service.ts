@@ -1,12 +1,24 @@
-import { Injectable, Logger, OnModuleDestroy } from '@nestjs/common';
-import { ConfigService } from '@app/common/config/config.service'; 
+import {
+  Inject,
+  Injectable,
+  Logger,
+  OnModuleDestroy,
+  OnModuleInit,
+} from '@nestjs/common';
+import { ConfigService } from '@app/common/config/config.service';
 import Redis from 'ioredis';
 
 @Injectable()
-export class RedisService extends Redis implements OnModuleDestroy {
+export class RedisService
+  extends Redis
+  implements OnModuleInit, OnModuleDestroy
+{
   private readonly logger = new Logger(RedisService.name);
 
-  constructor() {
+  constructor(
+    @Inject('REDIS_SERVICE_NAME')
+    private readonly serviceName: string,
+  ) {
     super({
       host: ConfigService.config.redis.host,
       port: ConfigService.config.redis.port,
@@ -14,35 +26,31 @@ export class RedisService extends Redis implements OnModuleDestroy {
       lazyConnect: true,
     });
 
-    this.on('connect', () => {
-      this.logger.verbose('Redis connected');
-    });
-
-    this.on('ready', () => {
-      this.logger.verbose('Redis ready');
-    });
-
     this.on('error', (err) => {
-      this.logger.fatal(`Redis error: ${err.message}`, err.stack);
-    });
-
-    this.on('close', () => {
-      this.logger.verbose('Redis connection closed');
+      this.logger.error(`Redis error: ${err.message}`, err.stack);
     });
   }
 
-  async onModuleDestroy() {
+  async onModuleInit(): Promise<void> {
+    try {
+      if (this.status !== 'ready') {
+        await this.connect();
+      }
+
+      const response = await this.ping();
+      if (response !== 'PONG') {
+        throw new Error(`Redis ping failed with response: ${response}`);
+      }
+    } catch (error) {
+      this.logger.error(
+        `[${this.serviceName}] Redis connection failed`,
+        error instanceof Error ? error.stack : String(error),
+      );
+      throw error;
+    }
+  }
+
+  async onModuleDestroy(): Promise<void> {
     await this.quit();
-  }
-
-  async checkConnection(): Promise<void> {
-    if (this.status !== 'ready') {
-      await this.connect();
-    }
-
-    const response = await this.ping();
-    if (response !== 'PONG') {
-      throw new Error(`Redis ping failed with response: ${response}`);
-    }
   }
 }

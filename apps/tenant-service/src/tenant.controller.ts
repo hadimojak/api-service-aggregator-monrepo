@@ -22,7 +22,7 @@ import {
   OmitType,
   PartialType,
 } from '@nestjs/swagger';
-import { TenantEntity } from './entities/tenant.entity';
+import { TenantEntity } from '@app/log/entities/tenant.entity'; 
 import { ModifyResultDto } from '@app/common/dto/result-modify.dto'; 
 import { CreateTenantDto } from '@app/common/dto/tenant-create.dto';
 import { TenantFilterDto } from '@app/common/dto/tenant-filter.dto'; 

@@ -11,9 +11,9 @@ import { randomBytes } from 'node:crypto';
 import {
   UserEntity,
   UserRole,
-} from 'apps/user-service/src/entities/user.entity';
-import { TenantEntity } from 'apps/tenant-service/src/entities/tenant.entity';
-import { WalletEntity } from 'apps/wallet-service/src/entities/wallet.entity';
+} from '@app/log/entities/user.entity';
+import { TenantEntity } from '@app/log/entities/tenant.entity';
+import { WalletEntity } from '@app/log/entities/wallet.entity';
 import {
   AuthResponseDto,
   LoginDto,
@@ -25,7 +25,7 @@ import { StringValue } from 'ms';
 import {
   NotificationEntity,
   NotificationType,
-} from 'apps/notification-service/src/entities/notification.entity';
+} from '@app/log/entities/notification.entity';
 
 @Injectable()
 export class AuthService {

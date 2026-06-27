@@ -12,7 +12,7 @@ import {
   QueryFailedError,
   Repository,
 } from 'typeorm';
-import { ProviderEntity } from './entities/provider.entity';
+import { ProviderEntity } from '@app/log/entities/provider.entity'; 
 import { CreateProviderDto } from '@app/common/dto/provider-create.dto'; 
 import { ModifyResultDto } from '@app/common/dto/result-modify.dto';
 import { ProviderFilterDto } from '@app/common/dto/provider-filtere.dto'; 

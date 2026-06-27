@@ -7,7 +7,7 @@ import {
   OneToOne,
   JoinColumn,
 } from 'typeorm';
-import { UserEntity } from 'apps/user-service/src/entities/user.entity'; 
+import { UserEntity } from './user.entity'; 
 
 @Entity('wallet')
 export class WalletEntity {

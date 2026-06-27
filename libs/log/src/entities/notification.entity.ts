@@ -7,7 +7,7 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { TenantEntity } from 'apps/tenant-service/src/entities/tenant.entity';
+import { TenantEntity } from './tenant.entity'; 
 
 export enum NotificationType {
   INFO = 'info',

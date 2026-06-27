@@ -6,7 +6,7 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { TenantEntity } from 'apps/tenant-service/src/entities/tenant.entity'; 
+import { TenantEntity } from './tenant.entity';
 
 @Entity('request_log')
 export class RequestLogEntity {

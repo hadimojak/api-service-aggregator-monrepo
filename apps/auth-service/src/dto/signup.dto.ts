@@ -6,7 +6,7 @@ import {
   Matches,
   MinLength,
 } from 'class-validator';
-import { UserRole } from 'apps/user-service/src/entities/user.entity'; 
+import { UserRole } from '@app/log/entities/user.entity'; 
 
 export class SignupDto {
   @IsEmail()

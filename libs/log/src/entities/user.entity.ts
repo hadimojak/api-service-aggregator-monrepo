@@ -7,8 +7,8 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { TenantEntity } from 'apps/tenant-service/src/entities/tenant.entity'; 
-import { WalletEntity } from 'apps/wallet-service/src/entities/wallet.entity'; 
+import { TenantEntity } from './tenant.entity'; 
+import { WalletEntity } from './wallet.entity';
 
 export enum UserRole {
   ADMIN = 'admin',

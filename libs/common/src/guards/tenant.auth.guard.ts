@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { TenantEntity } from 'apps/tenant-service/src/entities/tenant.entity'; 
+import { TenantEntity } from '@app/log/entities/tenant.entity'; 
 
 @Injectable()
 export class TenantGuard implements CanActivate {
