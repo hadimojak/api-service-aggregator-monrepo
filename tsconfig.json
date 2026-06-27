@@ -28,23 +28,29 @@
       "@app/cache/*": [
         "libs/cache/src/*"
       ],
+      "@app/common": [
+        "libs/common/src"
+      ],
+      "@app/common/*": [
+        "libs/common/src/*"
+      ],
       "@app/database": [
         "libs/database/src"
       ],
       "@app/database/*": [
         "libs/database/src/*"
       ],
-      "@app/rabbit": [
-        "libs/rabbit/src"
+      "@app/log": [
+        "libs/log/src"
       ],
-      "@app/rabbit/*": [
-        "libs/rabbit/src/*"
+      "@app/log/*": [
+        "libs/log/src/*"
       ],
-      "@app/shared": [
-        "libs/shared/src"
+      "@app/queue": [
+        "libs/queue/src"
       ],
-      "@app/shared/*": [
-        "libs/shared/src/*"
+      "@app/queue/*": [
+        "libs/queue/src/*"
       ]
     },
     "types": [

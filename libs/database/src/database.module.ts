@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
 import { DatabaseService } from './database.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConfigService } from '../../config/config.service';
-import { ProviderEntity } from '../provider/entities/provider.entity';
-import { TenantEntity } from '../tenant/entities/tenant.entity';
-import { RequestLogEntity } from '../log/entities/request-log.entity';
-import { UserEntity } from '../user/entities/user.entity';
-import { ApiEntity } from '../api/entities/api.entity';
-import { NotificationEntity } from '../notification/entities/notification.entity';
-import { WalletEntity } from '../wallet/entities/wallet.entity';
+import { ConfigService } from '@app/common/config/config.service'; 
+import { ProviderEntity } from 'apps/provider-service/src/entities/provider.entity'; 
+import { TenantEntity } from 'apps/tenant-service/src/entities/tenant.entity'; 
+import { RequestLogEntity } from '@app/log/entities/request-log.entity'; 
+import { UserEntity } from 'apps/user-service/src/entities/user.entity'; 
+import { ApiEntity } from 'apps/api-service/src/entities/api.entity'; 
+import { NotificationEntity } from 'apps/notification-service/src/entities/notification.entity'; 
+import { WalletEntity } from 'apps/wallet-service/src/entities/wallet.entity'; 
 
 @Module({
   providers: [DatabaseService],

@@ -1,6 +1,15 @@
 {
   "monorepo": true,
   "projects": {
+    "api-service": {
+      "type": "application",
+      "root": "apps/api-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-service/tsconfig.app.json"
+      }
+    },
     "auth-service": {
       "type": "application",
       "root": "apps/auth-service",
@@ -19,6 +28,15 @@
         "tsConfigPath": "libs/cache/tsconfig.lib.json"
       }
     },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    },
     "database": {
       "type": "library",
       "root": "libs/database",
@@ -26,6 +44,33 @@
       "sourceRoot": "libs/database/src",
       "compilerOptions": {
         "tsConfigPath": "libs/database/tsconfig.lib.json"
+      }
+    },
+    "gateway-api": {
+      "type": "application",
+      "root": "apps/gateway-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway-api/tsconfig.app.json"
+      }
+    },
+    "log": {
+      "type": "library",
+      "root": "libs/log",
+      "entryFile": "index",
+      "sourceRoot": "libs/log/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/log/tsconfig.lib.json"
+      }
+    },
+    "notification-service": {
+      "type": "application",
+      "root": "apps/notification-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/notification-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notification-service/tsconfig.app.json"
       }
     },
     "provider-service": {
@@ -37,22 +82,40 @@
         "tsConfigPath": "apps/provider-service/tsconfig.app.json"
       }
     },
-    "rabbit": {
+    "queue": {
       "type": "library",
-      "root": "libs/rabbit",
+      "root": "libs/queue",
       "entryFile": "index",
-      "sourceRoot": "libs/rabbit/src",
+      "sourceRoot": "libs/queue/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/rabbit/tsconfig.lib.json"
+        "tsConfigPath": "libs/queue/tsconfig.lib.json"
       }
     },
-    "shared": {
-      "type": "library",
-      "root": "libs/shared",
-      "entryFile": "index",
-      "sourceRoot": "libs/shared/src",
+    "tenant-service": {
+      "type": "application",
+      "root": "apps/tenant-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/tenant-service/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+        "tsConfigPath": "apps/tenant-service/tsconfig.app.json"
+      }
+    },
+    "user-service": {
+      "type": "application",
+      "root": "apps/user-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-service/tsconfig.app.json"
+      }
+    },
+    "wallet-service": {
+      "type": "application",
+      "root": "apps/wallet-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/wallet-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/wallet-service/tsconfig.app.json"
       }
     }
   },

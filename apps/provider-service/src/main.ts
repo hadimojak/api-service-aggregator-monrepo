@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { ProviderServiceModule } from './provider-service.module';
+import { ProviderModule } from './provider.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(ProviderServiceModule);
+  const app = await NestFactory.create(ProviderModule);
   await app.listen(process.env.port ?? 3000);
 }
 bootstrap();
