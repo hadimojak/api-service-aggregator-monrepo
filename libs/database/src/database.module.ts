@@ -24,7 +24,7 @@ export class DatabaseModule {
           password: ConfigService.config.postgress.POSTGRES_PASSWORD,
           database: ConfigService.config.postgress.POSTGRES_DB,
           autoLoadEntities: true,
-          synchronize: true,
+          synchronize: false,
           logging: false,
           retryAttempts: 10,
           retryDelay: 3000,
